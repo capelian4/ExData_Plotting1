@@ -1,0 +1,27 @@
+> hpc <- read.csv("C:/Users/CA/Downloads/exdata_data_household_power_consumption/household_power_consumption.txt", header=TRUE, sep=";")
+
+> hpc$datetime <- with(hpc, as.POSIXct(paste(Date,Time), format="%d/%m/%Y %H:%M:%S"))
+
+> hpc$Date <- as.Date(hpc$Date, "%d/%m/%Y") 
+
+> hpcSubset <- subset(hpc, hpc$Date =="2007-02-01"| hpc$Date =="2007-02-02")
+
+> par(mfrow=c(2,2), cex = 0.7)
+
+> plot(hpcSubset$datetime, hpcSubset$Global_active_power,  ylab = "Global Active Power",  xlab = "", type="l")
+
+> plot(hpcSubset$datetime, hpcSubset$Voltage,   ylab = "Voltage", xlab = "datetime", type="l") 
+
+> plot(hpcSubset$datetime, hpcSubset$Sub_metering_1,   ylab = "Energy sub metering",   xlab = "", type="l")
+
+> lines(hpcSubset$datetime, hpcSubset$Sub_metering_2, col="red") 
+
+> lines(hpcSubset$datetime, hpcSubset$Sub_metering_3, col="blue") 
+
+> legend("topright", col=c("black", "red", "blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), lty = c(1,1,1), bty = "n")
+
+> plot(hpcSubset$datetime, hpcSubset$Global_reactive_power,  ylab = "Global_reactive_power", xlab = "datetime", type="l") 
+
+> dev.copy(png,'plot4.png', width = 480, height = 480)
+
+> dev.off()
