@@ -1,0 +1,15 @@
+> hpc <- read.csv("C:/Users/CA/Downloads/exdata_data_household_power_consumption/household_power_consumption.txt", header=TRUE, sep=";")
+ 
+> View(hpc)
+ 
+> hpc$DateTime <- with(hpc, as.POSIXct(paste(Date,Time), format="%d/%m/%Y %H:%M:%S")) 
+
+> hpc$Date <- as.Date(hpc$Date, "%d/%m/%Y")
+
+> hpcSubset <- subset(hpc, hpc$Date =="2007-02-01"| hpc$Date =="2007-02-02")
+
+> plot(hpcSubset$DateTime, hpcSubset$Global_active_power, xlab = "", type="l", ylab = "Global Active Power (kilowatts)")
+
+> dev.copy(png,'plot2.png', width = 480, height = 480)
+
+> dev.off()
