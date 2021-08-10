@@ -1,0 +1,38 @@
+Week 1 assignment, Exploratory Data Analysis
+
+ExData_Plotting1 – READ.ME file
+#This assignment uses a dataset from the UC Irvine Machine Learning Repository called Electric power consumption [20Mb].
+#The dataset contains measurements of electric power consumption in one household with a one-minute sampling rate over a period of almost 4 years. Different electrical quantities and some sub-metering values are available. Nine variables charted and listed at the UCI web site include:
+1.	Date: Date in format dd/mm/yyyy
+2.	Time: time in format hh:mm:ss
+3.	Global_active_power: household global minute-averaged active power (in kilowatt)
+4.	Global_reactive_power: household global minute-averaged reactive power (in kilowatt)
+5.	Voltage: minute-averaged voltage (in volt)
+6.	Global_intensity: household global minute-averaged current intensity (in ampere)
+7.	Sub_metering_1: energy sub-metering No. 1 (in watt-hour of active energy). It corresponds to the kitchen, containing mainly a dishwasher, an oven and a microwave (hot plates are not electric but gas powered).
+8.	Sub_metering_2: energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light.
+9.	Sub_metering_3: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.
+#The dataset has 2,075,259 rows and 9 columns and missing values are coded as `?`.
+#I loaded data and the lubridate R package
+#Next, I import in the dataset naming it hpc
+
+> hpc <- read.csv("C:/Users/CA/Downloads/exdata_data_household_power_consumption/household_power_consumption.txt", header=FALSE, sep=";")
+#Per the instructions, I used data from the dates 2007-02-01 and 2007-02-02; and I could convert the Date and Time variables to Date/Time classes in R using the `strptime()` and `as.Date()` functions. 
+#In this assignment, I submit
+1.	A GitHub URL containing a git repository
+2.	A GitHub repository containing at least one commit beyond the original fork https://github.com/rdpeng/ExData_Plotting1
+1.	Here is the clone https://github.com/rdpeng/ExData_Plotting1 
+3.	Four plot files in specified graphics file formats
+4.	Four plots that correctly display contents per assignment instruction examples
+5.	Four sets of R code appear for each Plot numbered 1-4 (so four files)
+
+## Making Plots
+#The main goal of the assignment is to examine visually how household energy usage varies over a 2-day period in February 2007. 
+#To do this, I created four plots using the base plotting system, though I loaded lubridate. 
+#After I forked and cloned the assigned GitHub repository (see above), I then constructed the plots
+#Each plot was constructed to the following specifications and accompanied files
+*Saved as a .png file with a width of 480 pixels and a height of 480 pixels.
+* Named as `plot1.png`, `plot2.png`, etc.
+*Accompanied with separate R code files entitled `plot1.R`, `plot2.R`, etc. that has (a) code for creating the graphic according to four examples in the assignment, and (b) code for creating the .png file
+*Added to the git repository ultimately pushed to GitHub so that the GitHub version of your repository is up to date. 
+*Construct final assignment of four .png files and four R code files with a READ.ME file (9 files in total saved into the repository)
